@@ -1,0 +1,10 @@
+<h2>Libros Disponibles</h2>
+
+<div *ngFor="let libro of libros" class="libro-item">
+  <p><strong>{{ libro.titulo }}</strong></p>
+  <p>ISBN: {{ libro.isbn }}</p>
+  <p>Año: {{ libro.anio_publicacion }}</p>
+  <p>Stock: {{ libro.stock }}</p>
+  <button (click)="reservar(libro.id_libro)">Reservar</button>
+  <hr>
+</div>

@@ -1,0 +1,15 @@
+<h2>Mis Reservas</h2>
+
+<div class="lista-reservas">
+  <div class="reserva-item" *ngFor="let reserva of reservas">
+    <h3>{{ reserva.Libro?.titulo || ('Libro #' + reserva.id_libro) }}</h3>
+
+    <p><strong>Usuario:</strong> {{ reserva.Usuario?.nombre || reserva.id_usuario }}</p>
+    <p><strong>Estado:</strong> {{ formatearEstado(reserva.estado) }}</p>
+
+    <div class="acciones">
+      <button class="btn-cancelar" (click)="cancelar(reserva.id_reserva)">Cancelar</button>
+      <button class="btn-devolver" (click)="devolver(reserva.id_reserva)">Devolver</button>
+    </div>
+  </div>
+</div>
